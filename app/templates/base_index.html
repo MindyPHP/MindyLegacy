@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="ru"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" lang="ru"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="ru"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="ru"> <!--<![endif]-->
+<head>
+    <base href="/" />
+    <meta charset="utf-8">
+    {% block meta %}
+        {{ meta(this) }}
+    {% endblock %}
+    {%- if this.canonical -%}
+        <link rel="canonical" href="{{ this.canonical }}" />
+    {%- endif -%}
+    <meta name="author" content="Falaleev Maxim">
+    <meta name="document-state" content="dynamic"/>
+    <meta name="resource-type" content="document"/>
+    <meta name="rating" content="General"/>
+    <meta name="audience" content="all"/>
+    <meta name="author" content="Studio107"/>
+    <meta name="cmsmagazine" content="b4e5e2e2ee8b18f03662dc0ab840ddcb"/>
+    <meta name='yandex-verification' content='4280b4fe8b365ca5' />
+    {% block head %}{% endblock %}
+
+    <meta name="DC.title" content="Studio107">
+    <meta name="DC.subject" content="Web studio">
+    <meta name="DC.creator" content="Studio107">
+
+    {% block css %}{% endblock %}
+
+    <link rel="stylesheet" href="/static/dist/css/index/1.0.0.all.css"/>
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="/favicon72px.png">
+    <link rel="apple-touch-icon-precomposed" media="screen and (resolution: 163dpi)" href="/favicon57px.png" />
+    <link rel="apple-touch-icon-precomposed" media="screen and (resolution: 132dpi)" href="/favicon72px.png" />
+    <link rel="apple-touch-icon-precomposed" media="screen and (resolution: 326dpi)" href="/favicon114px.png" />
+</head>
+<body>
+{% include "_statistics.html" %}
+<section id="wrapper">
+    {% block content %}{% endblock %}
+</section>
+{% block js %}{% endblock %}
+</body>
+</html>

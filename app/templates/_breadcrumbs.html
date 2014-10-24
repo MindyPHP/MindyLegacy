@@ -1,0 +1,17 @@
+{% if this.breadcrumbs|length > 0 %}
+    <section class="row">
+        <section class="column large-12">
+            <nav class="breadcrumbs-container">
+                <ul class="breadcrumb-list">
+                    <li>
+                        <a href="{% if app.homeUrl %}{{ app.homeUrl }}{% else %}/{% endif %}" rel="tooltip" title="{{ param.core.sitename }}">Главная</a>
+                    </li>
+                    {% for bc in this.breadcrumbs %}
+                        <li>&rarr; {% if loop.last %}{{ bc.name }}{% else %}<a rel="tooltip" title="{{ bc.name }}" href="{{ bc.url }}">{{ bc.name }}</a>{% endif %}</li>
+                    {% endfor %}
+                </ul>
+                <p class="clear"></p>
+            </nav>
+        </section>
+    </section>
+{% endif %}

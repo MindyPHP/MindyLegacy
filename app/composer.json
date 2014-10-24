@@ -1,0 +1,56 @@
+{
+    "name": "mindy/one",
+    "homepage": "http://studio107.ru",
+    "version": "0.7",
+    "type": "library",
+    "license": "BSD",
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-0": {
+            "": "src/"
+        }
+    },
+    "config": {
+        "cache-files-ttl": 0
+    },
+    "require": {
+        "php": ">=5.4",
+        "mindy/orm": "dev-master",
+        "mindy/query": "dev-master",
+        "mindy/cache": "dev-master",
+        "mindy/base": "dev-master",
+        "mindy/form": "dev-master",
+        "mindy/pagination": "dev-master",
+        "mindy/finder": "dev-master",
+        "cebe/markdown": "*",
+        "monolog/monolog": "1.10.0",
+        "raven/raven": "0.9.0",
+        "mindy/router": "dev-master",
+        "mindy/mail": "dev-master",
+        "mindy/storage": "dev-master",
+        "imagine/imagine": "v0.5.0",
+        "mindy/update": "dev-master",
+        "mindy/template": "dev-master",
+        "mindy/console": "dev-master",
+        "mindy/controller": "dev-master",
+        "mindy/security": "dev-master",
+        "mindy/session": "dev-master",
+        "mindy/event": "dev-master",
+        "frandieguez/panorama-php": "1.0.7",
+        "mindy/application": "dev-master"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.32",
+        "phpunit/php-invoker": "1.1.3",
+        "phpunit/dbunit": "1.3.1",
+        "phpunit/phpunit-selenium": "1.3.3",
+        "phpunit/phpunit-story": "1.0.2",
+        "satooshi/php-coveralls": "dev-master"
+    },
+    "authors": [{
+        "name": "Maxim Falaleev",
+        "email": "max@studio107.ru",
+        "homepage": "http://studio107.ru",
+        "role": "Developer"
+    }]
+}

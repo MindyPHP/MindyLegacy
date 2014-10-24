@@ -1,0 +1,16 @@
+AddDefaultCharset UTF-8
+AddCharset utf-8 .css .js .xml .json .rss .atom
+
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+
+    # если директория или файл существуют, использовать их напрямую
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # иначе отправлять запрос на файл index.php
+    RewriteRule . index.php
+
+    RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php\ HTTP/
+    RewriteRule ^index\.php$ / [R=301,L]
+</IfModule>
