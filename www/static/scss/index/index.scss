@@ -1,0 +1,57 @@
+@import "normalize";
+@import "compass/css3";
+@import "compass/layout";
+@import "compass/utilities";
+@import "../settings";
+@import "foundation";
+@import "mindy";
+@import "../mindy_foundation";
+
+body {
+  background: transparent url(../../images/index/bg.jpg) 50% 50%/cover no-repeat;
+  color: #fff;
+  @include antialias;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #fff;
+}
+
+.index-container {
+  margin-top: 200px;
+  .left-block {
+    h3 {
+      margin-top: 20px;
+      font-size: 36px;
+    }
+    .logo {
+      @include hide-text;
+      background: transparent url(../../images/index/logo-big.png) 0 0 no-repeat;
+      display: block;
+      width: 306px;
+      height: 60px;
+    }
+  }
+
+  .right-block {
+    h2 {
+      font-size: 32px;
+    }
+
+    ul {
+      margin: 20px 0;
+      li {
+        $size: 28px;
+        line-height: $size;
+        height: $size;
+        padding: 0;
+        a {
+          color: #fff;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}

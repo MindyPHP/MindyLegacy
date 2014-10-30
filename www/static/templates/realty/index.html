@@ -1,0 +1,39 @@
+<section block-ui="realty-index-newlifeobject">
+    <h2><a href="/t/on">Новостроки</a></h2>
+    <ul class="object-list small-block-grid-2 medium-block-grid-3 large-block-grid-4">
+        <li ng-repeat="object in models.newlifeobject.objects">
+            <a href="/on-{{ object.slug }}">
+            <div class="inner">
+                <div class="inner-image">
+
+                </div>
+                <div class="inner-content">
+                    <p class="address">{{ object.address }}</p>
+                    <p class="price">{{ object.price }} руб.</p>
+                    <p class="additional">{{ object.area }} м<sup>2</sup> / {{ object.area_life }} м<sup>2</sup> / {{ object.area_kitchen }} м<sup>2</sup></p>
+                </div>
+            </div>
+            </a>
+        </li>
+    </ul>
+</section>
+
+<section block-ui="realty-index-oldlifeobject">
+    <h2><a href="/t/oo">Вторичное жилье</a></h2>
+    <ul class="object-list small-block-grid-2 medium-block-grid-3 large-block-grid-4">
+        <li ng-repeat="object in models.oldlifeobject.objects">
+            <a href="/oo-{{ object.slug }}">
+                <div class="inner">
+                    <div class="inner-image">
+
+                    </div>
+                    <div class="inner-content">
+                        <p class="address">{{ object.address }}</p>
+                        <p class="price">{{ object.price }} руб.</p>
+                        <p class="additional">{{ object.area }} м<sup>2</sup> / {{ object.area_life }} м<sup>2</sup> / {{ object.area_kitchen }} м<sup>2</sup></p>
+                    </div>
+                </div>
+            </a>
+        </li>
+    </ul>
+</section>

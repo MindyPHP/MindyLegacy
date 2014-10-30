@@ -1,0 +1,10 @@
+<section block-ui="games-patches">
+    <h1>Patches</h1>
+
+    <ul class="list no-bullet">
+        <li ng-repeat="patch in patches.objects">
+            <h4><a href="/{{ patch.game.slug }}/patch/{{ patch.id }}">{{ patch.name }}</a></h4>
+            <p>{{ patch.description }}</p>
+        </li>
+    </ul>
+</section>

@@ -1,0 +1,24 @@
+.breadcrumbs-container {
+  @include antialias;
+  .breadcrumb-list {
+    @include reset-list;
+    @include clearfix;
+    font-size: 14px;
+    color: #353535;
+    margin: 20px 0;
+
+    li {
+      @include float-left;
+      margin-right: 5px;
+
+      a {
+        color: #aaa;
+        text-decoration: underline;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

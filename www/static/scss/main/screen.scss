@@ -1,0 +1,149 @@
+@import "normalize";
+@import "compass/css3";
+@import "compass/layout";
+@import "compass/utilities";
+@import "../settings";
+@import "foundation";
+@import "mindy";
+@import "../mindy_foundation";
+
+@import "base/pages";
+@import "base/sidebar";
+@import "base/mmodal";
+@import "base/fancybox";
+@import "base/flash";
+@import "base/breadcrumbs";
+@import "base/pager";
+@import "base/footer";
+@import "base/mnotify";
+@import "base/table";
+@import "base/mixins";
+
+h1, h2, h3, h4, h5, h6 {
+  @include antialias;
+  color: #353535;
+  font-weight: 600;
+
+  a {
+    color: #353535;
+  }
+}
+
+strong {
+  font-weight: 700;
+  color: #353535;
+}
+
+.features {
+  @include antialias;
+  margin: 40px 0;
+}
+
+dl {
+  @include antialias;
+  margin-bottom: 20px;
+
+  dt, dd {
+    margin: 0;
+  }
+
+  dt {
+    float: left;
+    width: 180px;
+  }
+
+  dd {
+    @include clearfix;
+  }
+}
+
+@mixin link {
+  @include inline-block;
+  @include border-radius;
+  padding: 2px 6px;
+  color: #353535;
+  background-color: transparent;
+  border: 3px solid transparent;
+  &:hover, &.hover {
+    color: #353535;
+    border: 3px solid $primary-color;
+  }
+}
+
+.link {
+  @include link;
+}
+
+#content {
+  margin-bottom: 40px;
+}
+
+.post-content {
+  a {
+    color: $primary-color;
+    text-decoration: underline;
+  }
+}
+
+.error {
+  @include reset-list;
+  color: #a00;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.form-errors {
+  @include border-radius;
+  font-size: 14px;
+  padding: 10px;
+  margin: 20px 0;
+  background-color: #ffd7cf;
+  li {
+    font-weight: 700;
+    ul {
+      @include reset-list;
+      font-size: 14px;
+      li {
+        font-weight: 400;
+        margin-left: 15px;
+      }
+    }
+  }
+}
+
+iframe {
+  border: 0;
+}
+
+.link-button {
+  @include inline-block;
+
+  -webkit-border-radius: 5px !important;
+  -moz-border-radius: 5px !important;
+  -ms-border-radius: 5px !important;
+  -o-border-radius: 5px !important;
+  border-radius: 5px !important;
+
+  @include box-shadow(0 -13px 0px 0px rgba(0,0,0,.1) inset);
+  border: 0;
+  color: #fff;
+  background-color: $primary-color;
+  padding: 4px 10px;
+
+  &:hover {
+    color: #fff;
+    background-color: lighten($primary-color, 10%);
+  }
+}
+
+@import "parts/header";
+@import "parts/footer";
+@import "parts/online";
+@import "parts/comments";
+@import "parts/games";
+@import "parts/pager";
+@import "parts/pace";
+@import "parts/realty";
+@import "parts/forum";
+@import "parts/buttons";
+@import "parts/chat";

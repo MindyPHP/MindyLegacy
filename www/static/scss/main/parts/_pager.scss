@@ -1,0 +1,15 @@
+.pagination {
+  @include reset-list;
+  li {
+    @include border-radius;
+    @include inline-block;
+    float: none;
+
+    &.active {
+      background-color: #ccc;
+      a {
+        color: #fff;
+      }
+    }
+  }
+}

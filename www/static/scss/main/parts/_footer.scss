@@ -1,0 +1,16 @@
+#footer {
+  .footer-inner {
+    @include antialias;
+    padding: 10px 0 0;
+    text-align: center;
+
+    &, p, a {
+      color: #ccc;
+    }
+
+    p {
+      margin: 0;
+      font-size: 14px;
+    }
+  }
+}

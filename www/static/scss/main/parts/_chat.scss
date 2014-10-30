@@ -1,0 +1,58 @@
+#log-container {
+  position: relative;
+  width: 100%;
+  height: 420px;
+}
+
+#log {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 110px;
+  width: 100%;
+  overflow: auto;
+}
+
+#log .message-item {
+}
+
+#log .message-item p {
+  margin: 0;
+  font-size: 14px;
+}
+
+#log .message-item.reply {
+}
+
+#log .message-item .from {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 200px;
+  overflow: hidden;
+  color: #888;
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+#log .message-item .message {
+}
+
+#form {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+#form .form-inner {
+}
+
+#form .form-inner textarea {
+  width: 100%;
+  min-height: 32px;
+}

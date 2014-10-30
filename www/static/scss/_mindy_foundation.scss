@@ -1,0 +1,23 @@
+menu {
+  @include reset-list;
+}
+
+.form-ul {
+  @include reset-list;
+}
+
+.clear {
+  @include clear;
+}
+
+a {
+  &.transparent-link {
+    color: inherit;
+    text-decoration: inherit;
+    font-size: inherit;
+  }
+}
+
+input, textarea, button, select {
+  outline: none !important;
+}

@@ -1,0 +1,76 @@
+.comments-form {
+  margin-bottom: 30px;
+
+  .button-reply {
+    height: 40px;
+  }
+
+  .button {
+    font-size: 13px;
+    padding: 10px 30px;
+  }
+
+  textarea {
+    width: 100%;
+    min-height: 85px;
+    margin-bottom: 20px;
+  }
+
+  .reply, .no-reply {
+    display: none;
+    color: #aaa;
+  }
+
+  &.with-reply {
+    .reply, .no-reply {
+      display: inline;
+    }
+  }
+}
+
+.comment-list {
+  li {
+    display: block;
+    border-bottom: 1px solid #d6dbde;
+    padding-bottom: 6px;
+    margin-bottom: 10px;
+
+    &.level-2 {
+      margin-left: 20px;
+    }
+
+    @for $i from 3 through 8 {
+      &.level-#{$i} {
+        margin-left: #{$i * 20}px;
+      }
+    }
+
+    .reply-comment {
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    .comment-header {
+      .username {
+        font-weight: 700;
+      }
+
+      .time {
+        color: #aaa;
+      }
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.show-more {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #f1f1f1;
+  display: block;
+  margin: 40px 0;
+  color: #353535;
+}

@@ -1,0 +1,9 @@
+<section block-ui="games-genres">
+    <h1>Genres</h1>
+
+    <ul class="no-bullet" ng-repeat="model in models.objects">
+        <li>
+            <h4><a href="{{ model.absoluteUrl }}">{{ model.name }}</a></h4>
+        </li>
+    </ul>
+</section>

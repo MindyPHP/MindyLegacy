@@ -1,0 +1,7 @@
+.ui-pnotify {
+  background: transparent url(../images/mnotify/bg.png) 0 0 repeat;
+  color: #fff;
+  &, .ui-pnotify-container {
+    @include border-radius;
+  }
+}

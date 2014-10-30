@@ -1,0 +1,29 @@
+<section block-ui="games-developers-view">
+    <h1>{{ model.name }}</h1>
+
+    <p>{{ model.description }}</p>
+</section>
+
+<section block-ui="games-developers-view-games">
+    <p class="bar right">
+        <a class="list-icon" ng-class="{active: layout == 'list'}" ng-click="layout = 'list'"></a>
+        <a class="grid-icon" ng-class="{active: layout == 'grid'}" ng-click="layout = 'grid'"></a>
+    </p>
+
+    <h3>Games</h3>
+
+    <ul ng-show="layout == 'grid'" class="small-block-grid-2 medium-block-grid-3 large-block-grid-4 grid no-bullet">
+        <li ng-repeat="game in games.objects">
+            <h4><a href="/games/game/{{ game.slug }}">{{ game.name }}</a></h4>
+            <p>{{ game.description }}</p>
+        </li>
+    </ul>
+
+    <ul block-ui="games-developers-view-games" ng-show="layout == 'list'" class="list no-bullet">
+        <li ng-repeat="game in games.objects">
+            <h4><a href="/games/game/{{ game.slug }}">{{ game.name }}</a></h4>
+            <p>{{ game.description }}</p>
+            <p>Developer: <a href="/games/developers/{{ game.developer.id }}">{{ game.developer.name }}</a></p>
+        </li>
+    </ul>
+</section>

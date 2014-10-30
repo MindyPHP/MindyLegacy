@@ -1,0 +1,24 @@
+table {
+  width: 100%;
+  thead {
+    tr {
+      border-bottom: 1px solid #ccc;
+      th {
+        @include antialias;
+        color: #ccc;
+        font-weight: 700;
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      td {
+        a {
+          color: #353535;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
