@@ -5,6 +5,8 @@
 .sass-cache
 .scss-cache
 
+npm-debug.log
+
 session
 tmp
 temp

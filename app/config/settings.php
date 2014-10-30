@@ -73,7 +73,14 @@ return [
             'autoRenewCookie' => true,
         ],
         'cache' => [
-            'class' => '\Mindy\Cache\DummyCache'
+            'class' => 'Mindy\Cache\MemCache',
+            'servers' => [
+                [
+                    'host' => 'localhost',
+                    'port' => 11211,
+                    'weight' => 60,
+                ]
+            ],
         ],
         'storage' => [
             'class' => '\Mindy\Storage\MimiBoxStorage',
@@ -102,26 +109,5 @@ return [
         'log',
         'db',
     ],
-    'modules' => [
-        'Core',
-        'Meta',
-        'Pages',
-        'Files',
-        'Mail',
-        'Menu',
-        'User',
-        'Redirect',
-        'Admin',
-        'Translate',
-        'Sitemap',
-        'Comments',
-        'Sites',
-        'Slider',
-        'Blog',
-        'Catalog',
-        'Sape',
-        'Games',
-        'Api',
-        'Forum',
-    ]
+    'modules' => include(__DIR__ . '/modules.php')
 ];
