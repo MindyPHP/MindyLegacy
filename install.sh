@@ -3,7 +3,7 @@
 cd app/Modules;
 
 install_module() {
-    git clone git@github.com:studio107/$1.git
+    git clone https://github.com/studio107/$1.git
 }
 
 install_module 'Admin'
