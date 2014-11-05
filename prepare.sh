@@ -12,7 +12,9 @@ echo ""
 npm install
 bower install
 echo ""
-cd ../static_admin
+cd ..
+git clone git@github.com:studio107/static_admin.git static_admin
+cd static_admin
 echo ""
 npm install
 bower install
