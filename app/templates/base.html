@@ -5,31 +5,19 @@
 <!--[if gt IE 8]><!-->
 <html class="no-js" lang="ru"> <!--<![endif]-->
 <head>
-    <base href="/" />
     <meta charset="utf-8">
-    {% block meta %}
-        {{ meta(this) }}
-    {% endblock %}
-    {%- if this.canonical -%}
-        <link rel="canonical" href="{{ this.canonical }}" />
-    {%- endif -%}
-    <meta name="author" content="Falaleev Maxim">
-    <meta name="document-state" content="dynamic"/>
-    <meta name="resource-type" content="document"/>
-    <meta name="rating" content="General"/>
-    <meta name="audience" content="all"/>
-    <meta name="author" content="Studio107"/>
-    <meta name="cmsmagazine" content="b4e5e2e2ee8b18f03662dc0ab840ddcb"/>
-    <meta name='yandex-verification' content='4280b4fe8b365ca5' />
+    {% block seo %}{{ meta(this) }}{% endblock %}
+    <meta name="author" content="Studio107">
+    <meta name='yandex-verification' content='4280b4fe8b365ca5'>
+    <meta name="robots" content="noindex, nofollow">
     {% block head %}{% endblock %}
 
     <meta name="DC.title" content="Studio107">
-    <meta name="DC.subject" content="Web studio">
     <meta name="DC.creator" content="Studio107">
 
     {% block css %}{% endblock %}
 
-    <link rel="stylesheet" href="/static/dist/css/main/1.0.0.all.css"/>
+    <link rel="stylesheet" href="/static/dist/css/1.0.0.all.css"/>
     <script type="application/javascript" src="/static/dist/js/1.0.0.all.js"></script>
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
@@ -39,33 +27,25 @@
     <link rel="apple-touch-icon-precomposed" media="screen and (resolution: 132dpi)" href="/favicon72px.png" />
     <link rel="apple-touch-icon-precomposed" media="screen and (resolution: 326dpi)" href="/favicon114px.png" />
 </head>
-<body class="{% block body_class %}{% endblock %}" ng-app="App">
-
-{% include "_statistics.html" %}
-
+<body {% if request.path == '/' %} class="index"{% endif %}>
 <section id="wrapper">
     <header id="header">
         <section class="header-inner row">
-            <section class="columns large-12">
-                <menu class="menu main-menu right">
-                    {% if user.isGuest %}
-                        <li><a href="{% url 'user.login' %}">{{ t('Login', 'user') }}</a></li>
-                        <li><a href="{% url 'user.registration' %}">{{ t('Registration', 'user') }}</a></li>
-                    {% else %}
-                        <li><a href="{% url 'user.profile' %}">{{ t('Profile', 'user') }}</a></li>
-                    {% endif %}
-                </menu>
-                <h1 class="logo">
+            <section class="columns large-3">
+                <section class="logo">
                     <a class="logo-link" href="/">
-                        {{ param('core.core.sitename') }}
+                        <img src="/static/dist/images/main/logo.png" alt=""/>
                     </a>
-                </h1>
-                <menu class="menu main-menu">
-                    {{ get_menu('header-menu')|safe }}
-                </menu>
+                </section>
+            </section>
+            <section class="columns large-9">
+                <div class="menu-holder">
+                    <menu class="menu no-bullet main-menu justify">
+                        {{ get_menu('main-menu')|safe }}
+                    </menu>
+                </div>
             </section>
         </section>
-        {% block header_content %}{% endblock %}
     </header>
     <p class="clear"></p>
     <section id="main">
@@ -78,21 +58,18 @@
                 {% block breadcrumbs %}
                     {% include "_breadcrumbs.html" %}
                 {% endblock %}
-
-                {% block content_header %}
-                {% endblock %}
             </section>
 
             {% block main %}
                 <section class="row">
-                    <section class="content columns large-12" ng-controller="{% block controller %}{% endblock %}" ng-view>
+                    <section class="content columns large-12">
                         {% block heading %}{% endblock %}
-                        {% block content_before %}{% endblock %}
                         {% block content %}{% endblock %}
-                        {% block comments %}{% endblock %}
                     </section>
                 </section>
             {% endblock %}
+
+            {% block after_content %}{% endblock %}
 
             <p class="clear"></p>
         </section>
@@ -100,14 +77,40 @@
     <p id="push"></p>
 </section>
 
-<section id="footer" class="{% block footer_class %}{% endblock %}">
-    <section class="footer-inner row">
-        Создание сайта <a href="http://studio107.ru" target="_blank">Студия 107</a> {{ time|date('Y') }} &copy;
-        Сайт работает на <a href="http://mindy-cms.com" target="_blank">Mindy CMS</a> &copy;<br/>
-        При копировании материалов с сайта, установка ссылки на источник информации обязательна.
-    </section>
-</section>
+<section id="footer">
+    <section id="footer-inner">
+        <section class="row">
+            <section class="column large-12">
+                <section class="footer-data">
+                    <section class="inline-block about">
+                        <section class="footer-multiline">
+                            {{ param('core.core.sitename') }}<br/>
+                            Все права защищены.
+                        </section>
+                    </section>
 
-{% block js %}{% endblock %}
+                    <section class="inline-block address-info right">
+                            <section class="author">
+                                <section class="author-info">
+                                    Разработка сайта<br/>
+                                    <address>
+                                    <a class="transparent-link" href="http://studio107.ru" target="_blank">
+                                        Студия 107 &copy; {{ "now"|date("Y") }}
+                                    </a>
+                                    </address>
+                                </section>
+                                <section class="author-icon">
+                                    <i class="icon-107"></i>
+                                </section>
+                            </section>
+                    </section>
+                </section>
+            </section>
+        </section>
+    </section>
+    </section>
+
+    {% block js %}{% endblock %}
+
 </body>
 </html>

@@ -1,0 +1,16 @@
+{% if form.fieldsets %}
+    {% for fieldset, fields in form.fieldsets %}
+        <fieldset>
+            <legend>{{ fieldset }}</legend>
+            <ul class="form-ul">
+                {{ form.render("core/form/ul-fields.html", fields)|raw }}
+            </ul>
+        </fieldset>
+    {% endfor %}
+{% else %}
+    <ul class="form-ul">
+        {% for field in form %}
+            <li>{{ field|raw }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}

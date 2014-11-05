@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+{% endblock %}
+
+{% block content %}
+    <section class="offices">
+        <section class="map">
+            <div id="map" style="height: 460px;"></div>
+        </section>
+
+        <ul class="no-bullet">
+            {% for office in offices %}
+                <li class="contacts-info">
+                    {% if office.address %}
+                        <section class="office-block address">
+                            <section class="multiline">
+                                {{ office.address }}
+                            </section>
+                        </section>
+                    {% endif %}
+
+                    {% if office.address %}
+                        <section class="office-block email">
+                            <section class="multiline">
+                                <a class="transparent-link" href="mailto:{{ office.email }}">
+                                    {{ office.email }}
+                                </a>
+                            </section>
+                        </section>
+                    {% endif %}
+
+                    {% if office.phone %}
+                        <section class="office-block phone">
+                            <section class="multiline">
+                                {{ office.phone }}
+                            </section>
+                        </section>
+                    {% endif %}
+
+                    {% if office.skype %}
+                        <section class="office-block skype">
+                            <section class="multiline">
+                                {{ office.skype }}
+                            </section>
+                        </section>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript">
+        ymaps.ready(init);
+        var myMap;
+        {% set first_model = offices|first %}
+
+        function init(){
+            myMap = new ymaps.Map("map", {
+                center: [{{ first_model.lat }}, {{ first_model.lng }}],
+                zoom: 16,
+                controls: ["zoomControl"]
+            });
+
+            {% for office in offices %}
+                myPlacemark{{ office.id }} = new ymaps.Placemark([{{ office.lat }}, {{ office.lng }}], {
+                    hintContent: '{{ office.name }}',
+                    balloonContentHeader: '{{ office.name }}',
+                    balloonContent: '{{ office.address }}<br/>{{ office.phone }}'
+                }, {
+                    iconLayout: 'default#image',
+                    iconImageHref: '/static/placemark.png',
+                    iconImageSize: [40, 54]
+                });
+
+                myMap.geoObjects.add(myPlacemark{{ office.id }});
+            {% endfor %}
+        }
+    </script>
+{% endblock %}
+
+{% block footer_class %}top-line{% endblock %}

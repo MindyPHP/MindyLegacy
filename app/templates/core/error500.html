@@ -1,0 +1,9 @@
+{% extends 'error.html' %}
+
+{% block error_code %}
+    {{ data.code }}
+{% endblock %}
+
+{% block error_title %}
+    {{ data.message }}
+{% endblock %}

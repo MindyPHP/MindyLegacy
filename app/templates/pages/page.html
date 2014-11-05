@@ -1,0 +1,28 @@
+{%- extends "base.html" -%}
+
+{% block heading %}
+    <h1 class="title">
+        {{ model.name }}
+    </h1>
+{% endblock %}
+
+{% block content %}
+    <article class="page">
+        {{ model.content|raw }}
+    </article>
+{% endblock %}
+
+{% block after_content %}
+    {% if model.enable_comments and hasComments %}
+    <section class="pages-comments dotted">
+        <section class="row">
+            <section class="column large-12">
+                <section class="comments-title">
+                    Комментарии пользователей
+                </section>
+                {{ render_comments(request, "pages/_comments.html", model, model.comments)|raw }}
+            </section>
+        </section>
+    </section>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,12 @@
+{% if form.fieldsets %}
+    {% for fieldset, fields in form.fieldsets %}
+        <fieldset>
+            <legend>{{ fieldset }}</legend>
+            {{ form.render("core/form/block-fields.html", fields)|raw }}
+        </fieldset>
+    {% endfor %}
+{% else %}
+    {% for field in form %}
+        <section class="form-block">{{ field|raw }}</section>
+    {% endfor %}
+{% endif %}

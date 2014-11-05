@@ -1,0 +1,57 @@
+{% if model.enable_comments_form %}
+    <section class="comments-form-holder">
+        <form method="post" action="{% url 'page.comment_send' model.url %}?_next={{ request.path }}" class="comments-form ajax-validation">
+            {% csrf_token %}
+            <section style="display: none;">
+                {{ form.asUl(['parent'])|raw }}
+            </section>
+
+            <section class="row">
+                <section class="column large-9">
+                    {{ form.asUl(['comment'])|raw }}
+
+                    <section class="button-reply">
+                        <button class="button round red shadow" type="submit">
+                            Отправить
+                        </button>
+                    </section>
+                </section>
+                <section class="column large-3">
+                    {% if user.isGuest %}
+                        {{ form.asUl(['username', 'email'])|raw }}
+                    {% endif %}
+                </section>
+            </section>
+        </form>
+    </section>
+{% endif %}
+
+<ul class="comment-list no-bullet">
+    {% for comment in comments %}
+        <li>
+            <section class="comment-header">
+                <span class="username">
+                    {% if comment.username %}
+                        {{ comment.username|e }}
+                    {% else %}
+                        {% if comment.user %}
+                            {{ comment.user.username }}
+                        {% else %}
+                            Гость
+                        {% endif %}
+                    {% endif %}
+                </span>
+
+                <span class="time">
+                    {{ comment.published_at|humanizeDateTime }}
+                </span>
+            </section>
+
+            <section class="comment">
+                {{ comment.comment|e }}
+            </section>
+        </li>
+    {% endfor %}
+</ul>
+
+{{ pager.render() }}
