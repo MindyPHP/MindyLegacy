@@ -21,4 +21,3 @@ bower install
 echo ""
 cd ..
 echo ""
-php index.php db sync
