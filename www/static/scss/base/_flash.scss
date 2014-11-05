@@ -1,0 +1,13 @@
+.flash-list {
+  @include reset-list;
+  li {
+    padding: 10px 15px;
+
+    &.success {
+      @include border-radius(4px);
+      background-color: #FF7854;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+  }
+}

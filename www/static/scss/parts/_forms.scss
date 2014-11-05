@@ -1,0 +1,91 @@
+.button {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  @include transition($defaultTransition);
+}
+
+body {
+  input[type=checkbox], input[type=file], input[type=radio] {
+    margin: 0;
+  }
+}
+
+input[type="text"], input[type="password"], textarea {
+  border: 1px solid #dedede;
+  @include border-radius(6px);
+  @include box-shadow(none);
+  margin: 0;
+}
+
+textarea {
+  max-width: 100%;
+}
+
+select {
+  border: none;
+  @include box-shadow(none);
+  background-color: #fff;
+  height: 37px;
+  margin: 0;
+
+  &:hover {
+    background-color: #fff;
+  }
+}
+
+.select-holder {
+  position: relative;
+  display: inline-block;
+  border: 1px solid #dedede;
+  @include border-radius(6px);
+  overflow: hidden;
+  width: 100%;
+
+  &::after {
+    // Webkit bug still exists http://tech.bluesmoon.info/2011/04/overflowhidden-border-radius-and.html
+    -webkit-border-radius: 0 6px 6px 0;
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 30px;
+    background-image: url('../images/select-bg.png');
+    background-position: 100% 50%;
+    background-repeat: no-repeat;
+    background-color: #fff;
+  }
+
+  select {
+    padding-right: 30px;
+  }
+
+  &:hover {
+    border: 1px solid #dedede;
+    background-color: #fff;
+  }
+}
+
+label {
+  font-size: 12px;
+  color: #9f9f9f;
+  margin-bottom: 2px;
+}
+
+form {
+  ul.error {
+    margin-top: 2px;
+    list-style: none;
+    color: $alert-color;
+
+    li {
+      margin-bottom: 2px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

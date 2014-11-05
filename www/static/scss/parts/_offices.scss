@@ -1,0 +1,83 @@
+.offices {
+  .map {
+    #map {
+      ymaps[class$="inner-panes"] {
+        &>ymaps:first-child {
+          @include box-shadow(inset 0 0 15px 10px rgba(0,0,0,0.1));
+        }
+      }
+    }
+  }
+
+  .contacts-form {
+    margin-top: -65px;
+    margin-bottom: 30px;
+
+    .contacts-block {
+      padding: 18px 25px 0px 25px;
+      border: 1px solid #d4d4d4;
+      @include border-radius(4px);
+      background-color: #fff;
+      @include box-shadow(0 0 10px rgba(0,0,0,.05));
+
+      .title-holder {
+        margin-bottom: 20px;
+
+        .title {
+          float: left;
+          color: $strong-color;
+          font-size: 30px;
+          font-weight: 300;
+        }
+
+        .select-holder {
+          width: 195px;
+          float: right;
+          margin-top: 3px;
+
+          select {
+            color: $secondary-color;
+          }
+        }
+      }
+
+      .contacts-info {
+        padding: 10px 0;
+        .office-block {
+          height: 40px;
+          @include multiline(40px);
+          padding-left: 38px;
+
+          background-repeat: no-repeat;
+          background-position: 0 50%;
+
+          margin-bottom: 20px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          &.address {
+            background-image: url('../images/place-contacts.png');
+            background-size: 22px 30px;
+          }
+
+          &.phone {
+            background-image: url('../images/phone-contacts.png');
+            background-size: 20px 26px;
+          }
+
+          &.skype {
+            background-image: url('../images/skype-contacts.png');
+            background-size: 24px 26px;
+          }
+
+          &.email {
+            background-image: url('../images/mail-contacts.png');
+            background-size: 23px 19px;
+          }
+        }
+      }
+    }
+  }
+}

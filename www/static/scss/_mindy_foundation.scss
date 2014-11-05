@@ -16,8 +16,25 @@ a {
     text-decoration: inherit;
     font-size: inherit;
   }
+  &.underline{
+    border-bottom: 1px solid;
+  }
+  .underline{
+    border-bottom: 1px solid;
+  }
+}
+
+body {
+  font-size: $body-font-size;
 }
 
 input, textarea, button, select {
   outline: none !important;
+}
+.inline-block{
+  @include inline-block;
+}
+
+a, span, i{
+  @include transition($defaultTransition);
 }

@@ -1,0 +1,15 @@
+.partners {
+  margin-bottom: 30px;
+
+  .partners-list-holder {
+    .partners-list {
+      li {
+        margin-bottom: 30px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.breadcrumbs-container {
+  .breadcrumb-list {
+    @include reset-list;
+    @include clearfix;
+    font-size: 14px;
+    color: #353535;
+    margin: 0;
+
+    li {
+      @include float-left;
+      margin-right: 5px;
+
+      a {
+        color: $primary-color;
+        text-decoration: underline;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

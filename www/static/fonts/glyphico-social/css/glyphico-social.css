@@ -1,0 +1,129 @@
+
+@charset "UTF-8";
+
+@font-face {
+    font-family: "glyphico-social";
+    src:url("../fonts/glyphico-social.eot");
+    src:url("../fonts/glyphico-social.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/glyphico-social.ttf") format("truetype"),
+    url("../fonts/glyphico-social.svg#glyphico-social") format("svg"),
+    url("../fonts/glyphico-social.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+[data-social]:before {
+    font-family: "glyphico-social" !important;
+    content: attr(data-icon);
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="social-"]:before,
+[class*=" social-"]:before {
+    font-family: "glyphico-social" !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+.social-facebook:before {
+    content: "a";
+}
+
+.social-facebook-circle:before {
+    content: "b";
+}
+
+.social-gplus:before {
+    content: "c";
+}
+
+.social-gplus-circle:before {
+    content: "d";
+}
+
+.social-instagram:before {
+    content: "e";
+}
+
+.social-mailru:before {
+    content: "f";
+}
+
+.social-instagram-circle:before {
+    content: "g";
+}
+
+.social-mailru-circle:before {
+    content: "h";
+}
+
+.social-ok:before {
+    content: "i";
+}
+
+.social-ok-circle:before {
+    content: "j";
+}
+
+.social-pinterest:before {
+    content: "k";
+}
+
+.social-pinterest-circle:before {
+    content: "l";
+}
+
+.social-twitter:before {
+    content: "m";
+}
+
+.social-youtube-circle:before {
+    content: "n";
+}
+
+.social-youtube:before {
+    content: "o";
+}
+
+.social-ya-circle:before {
+    content: "p";
+}
+
+.social-ya:before {
+    content: "q";
+}
+
+.social-vk-circle:before {
+    content: "r";
+}
+
+.social-vk:before {
+    content: "s";
+}
+
+.social-vimeo-circle:before {
+    content: "t";
+}
+
+.social-vimeo:before {
+    content: "u";
+}
+
+.social-twitter-circle:before {
+    content: "v";
+}
+

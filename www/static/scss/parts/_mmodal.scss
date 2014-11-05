@@ -1,0 +1,78 @@
+.request-form-success {
+  padding: 20px;
+  font-size: 24px;
+  font-weight: 300;
+  color: $strong-color;
+}
+
+.request-form-success, .request-form {
+  width: 440px;
+  padding: 20px;
+  background-color: #f4f4f4;
+  @include border-radius(5px);
+}
+
+.request-form {
+  .title {
+    font-size: 24px;
+    font-weight: 300;
+    color: $strong-color;
+    margin-bottom: 15px;
+    text-align: center;
+    line-height: 1.1;
+  }
+
+  .form-ul {
+    li {
+      display: inline-block;
+      width: 100%;
+    }
+
+    label {
+      display: none;
+    }
+
+    input[type="checkbox"] + label {
+      display: inline-block;
+    }
+
+    textarea {
+      margin-bottom: 7px;
+      height: 100px;
+    }
+
+    .button {
+      float: right;
+      display: inline-block;
+      padding: 3px 20px;
+      font-size: 12px;
+      @include border-radius(10px);
+
+      &::after{
+        content: '';
+        clear: both;
+      }
+    }
+  }
+
+  .button-holder {
+    text-align: center;
+
+    .button {
+      padding: 8px 30px;
+      font-size: 13px;
+    }
+  }
+}
+
+.mmodal-container {
+  .mmodal-close {
+    font-size: 24px;
+    top: 12px;
+    right: 14px;
+  }
+
+  .mmodal-content {
+    padding: 0;
+  }
+}

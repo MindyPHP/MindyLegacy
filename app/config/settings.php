@@ -14,7 +14,7 @@ return [
         'qwe@qwe.com'
     ],
     'locale' => [
-        'language' => 'en',
+        'language' => 'ru',
         'sourceLanguage' => 'en',
         'charset' => 'utf-8',
     ],

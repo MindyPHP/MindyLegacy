@@ -9,8 +9,7 @@ var concat = require('gulp-concat'),
     changed = require('gulp-changed'),
     clean = require('gulp-clean'),
     cache = require('gulp-cached'),
-    livereload = require('gulp-livereload'),
-    angularTemplates = require('gulp-angular-templates');
+    livereload = require('gulp-livereload')
 
 var version = '1.0.0';
 
@@ -46,7 +45,6 @@ var dst = {
 };
 
 var paths = {
-    templates: 'templates/**/*.html',
     js: [
         'vendor/jquery/dist/jquery.min.js',
         'vendor/modernizr/modernizr.js',
@@ -62,25 +60,6 @@ var paths = {
         'vendor/jquery.inputmask/dist/inputmask/jquery.inputmask.js',
         'vendor/pace/pace.js',
         'vendor/underscore/underscore.js',
-        'vendor/pines-notify/pnotify.core.js',
-        'vendor/pines-notify/pnotify.buttons.js',
-        'vendor/pines-notify/pnotify.callbacks.js',
-        'vendor/pines-notify/pnotify.confirm.js',
-        'vendor/pines-notify/pnotify.desktop.js',
-        'vendor/pines-notify/pnotify.history.js',
-        'vendor/pines-notify/pnotify.nonblock.js',
-
-//        'vendor/angular/angular.js',
-//        'vendor/angular-route/angular-route.js',
-//        'vendor/angular-resource/angular-resource.js',
-//        'vendor/angular-sanitize/angular-sanitize.js',
-//        'vendor/angular-block-ui/dist/angular-block-ui.js',
-//        'vendor/angular-cookies/angular-cookies.min.js',
-//        'vendor/angular-pines-notify/src/pnotify.js',
-//        'vendor/ngDialog/js/ngDialog.js',
-//        'vendor/angular-foundation/mm-foundation.js',
-//        'vendor/angular-foundation/mm-foundation-tpls.js',
-//        'vendor/angular-youtube-mb/src/angular-youtube-embed.js',
 
         'js/ajax_validation.js',
         'js/comments.js',
@@ -89,30 +68,24 @@ var paths = {
         'js/endless_on_scroll.js',
         'js/chat.js',
         'js/app.js'
-//        'js/init.js',
-//        'js/templates.js',
-//        'js/main.js',
-//        'js/directives/**/*.js',
-//        'js/controllers/**/*.js'
     ],
     images: [
         'images/**/*'
     ],
     fonts: [
-        'fonts/octicons/fonts/*'
+        'fonts/Glyphico/fonts/*',
+        'fonts/glyphico-social/fonts/*',
+        'fonts/lato/fonts/*'
     ],
     sass: 'scss/main/**/*.scss',
     css: [
         'vendor/slick-carousel/slick/slick.css',
         'vendor/jquery.mnotifyajax/css/jquery.mnotifyajax.css',
         'css/main/**/*.css',
-        'vendor/angular-block-ui/dist/angular-block-ui.css',
-        'vendor/pines-notify/pnotify.core.css',
-        'vendor/pines-notify/pnotify.buttons.css',
-        'vendor/pines-notify/pnotify.history.css',
-        'fonts/octicons/css/octicons.css',
-        'vendor/ngDialog/css/ngDialog.css',
-        'vendor/ngDialog/css/ngDialog-theme-default.css'
+
+        'fonts/glyphico-social/css/glyphico-social.css',
+        'fonts/Glyphico/css/glyphico.css',
+        'fonts/lato/css/lato.css'
     ]
 };
 
@@ -141,14 +114,6 @@ gulp.task('sass-index', function() {
         .pipe(gulp.dest('./css/index'));
 });
 
-gulp.task('css-index', ['sass-index'], function() {
-    return gulp.src('css/index/**/*.css')
-        .pipe(gulp.dest('./css/index'))
-        .pipe(minifyCSS(minifyOpts))
-        .pipe(concat(version + '.all.css'))
-        .pipe(gulp.dest('dist/css/index'));
-});
-
 gulp.task('sass', function() {
     return gulp.src('scss/main/**/*.scss')
         .pipe(sass(sassOpts))
@@ -161,15 +126,6 @@ gulp.task('css', ['sass'], function() {
         .pipe(minifyCSS(minifyOpts))
         .pipe(concat(version + '.all.css'))
         .pipe(gulp.dest('dist/css/main'));
-});
-
-gulp.task('templates', function() {
-    return gulp.src(paths.templates)
-        .pipe(angularTemplates({
-            module: 'templates'
-        }))
-        .pipe(concat('templates.js'))
-        .pipe(gulp.dest(dst.templates));
 });
 
 // Rerun the task when a file changes
@@ -196,5 +152,5 @@ gulp.task('clean', function() {
 });
 
 gulp.task('default', ['clean'], function() {
-    return gulp.start('js', 'css', 'css-index', 'images', 'fonts', 'templates');
+    return gulp.start('js', 'css', 'images', 'fonts');
 });
