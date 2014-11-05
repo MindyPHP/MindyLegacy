@@ -73,19 +73,10 @@ return [
             'autoRenewCookie' => true,
         ],
         'cache' => [
-            'class' => 'Mindy\Cache\MemCache',
-            'servers' => [
-                [
-                    'host' => 'localhost',
-                    'port' => 11211,
-                    'weight' => 60,
-                ]
-            ],
+            'class' => '\Mindy\Cache\DummyCache'
         ],
         'storage' => [
-            'class' => '\Mindy\Storage\MimiBoxStorage',
-            'apiKey' => 'TBlQ2XqG',
-            'username' => 'games.dev'
+            'class' => '\Mindy\Storage\FileSystemStorage',
         ],
         'template' => [
             'class' => '\Mindy\Template\Renderer',
