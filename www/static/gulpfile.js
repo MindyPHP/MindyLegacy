@@ -9,7 +9,7 @@ var concat = require('gulp-concat'),
     changed = require('gulp-changed'),
     clean = require('gulp-clean'),
     cache = require('gulp-cached'),
-    livereload = require('gulp-livereload')
+    livereload = require('gulp-livereload');
 
 var version = '1.0.0';
 
@@ -37,11 +37,10 @@ if (process.env.USER == 'aleksandrgordeev') {
 
 var dst = {
     js: 'dist/js',
-    css: 'dist/css/main',
+    css: 'dist/css',
     images: 'dist/images',
-    sass: './css/main',
-    fonts: 'dist/fonts',
-    templates: './js'
+    sass: 'css',
+    fonts: 'dist/fonts'
 };
 
 var paths = {
@@ -77,11 +76,11 @@ var paths = {
         'fonts/glyphico-social/fonts/*',
         'fonts/lato/fonts/*'
     ],
-    sass: 'scss/main/**/*.scss',
+    sass: 'scss/**/*.scss',
     css: [
         'vendor/slick-carousel/slick/slick.css',
         'vendor/jquery.mnotifyajax/css/jquery.mnotifyajax.css',
-        'css/main/**/*.css',
+        'css/**/*.css',
 
         'fonts/glyphico-social/css/glyphico-social.css',
         'fonts/Glyphico/css/glyphico.css',
@@ -108,24 +107,16 @@ gulp.task('images', function() {
         .pipe(gulp.dest(dst.images));
 });
 
-gulp.task('sass-index', function() {
-    return gulp.src('scss/index/**/*.scss')
-        .pipe(sass(sassOpts))
-        .pipe(gulp.dest('./css/index'));
-});
-
 gulp.task('sass', function() {
-    return gulp.src('scss/main/**/*.scss')
+    return gulp.src(paths.sass)
         .pipe(sass(sassOpts))
-        .pipe(gulp.dest('./css/main'));
+        .pipe(gulp.dest(dst.sass));
 });
-
 gulp.task('css', ['sass'], function() {
     return gulp.src(paths.css)
-        .pipe(gulp.dest('./css/main'))
         .pipe(minifyCSS(minifyOpts))
         .pipe(concat(version + '.all.css'))
-        .pipe(gulp.dest('dist/css/main'));
+        .pipe(gulp.dest(dst.css));
 });
 
 // Rerun the task when a file changes
@@ -139,9 +130,7 @@ gulp.task('watch', ['default'], function() {
 
     gulp.watch(paths.js, ['js']).on('change', liveReloadCallback);
     gulp.watch(paths.images, ['images']);
-    gulp.watch('scss/main/**/*.scss', ['css']).on('change', liveReloadCallback);
-    gulp.watch('scss/index/**/*.scss', ['css-index']).on('change', liveReloadCallback);
-    gulp.watch(paths.templates, ['templates', 'js']).on('change', liveReloadCallback);
+    gulp.watch(paths.sass, ['css']).on('change', liveReloadCallback);
 });
 
 // Clean
