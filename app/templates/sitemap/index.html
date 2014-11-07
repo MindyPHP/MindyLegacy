@@ -1,0 +1,25 @@
+{% extends 'sitemap/base.html' %}
+
+{% block content_header %}
+    <section class="row">
+        <section class="column large-12">
+            <h1>Карта сайта</h1>
+        </section>
+    </section>
+{% endblock %}
+
+{% block content %}
+    <ul class="no-bullet sitemap-list">
+        {% for sitemap in sitemaps %}
+            {% for item in sitemap.htmlData %}
+                <li style="padding-left: {{ 20 * item.level }}px">
+                    <a href="{{ item.url }}">
+                        {{ item.name }}
+                    </a>
+                </li>
+            {% endfor %}
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block footer_class %}top-line{% endblock %}
