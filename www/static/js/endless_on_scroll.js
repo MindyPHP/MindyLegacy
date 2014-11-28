@@ -7,8 +7,10 @@
             margin = endless_on_scroll_margin;
         }
         $(window).scroll(function(){
-            if ($(document).height() - $(window).height() - $(window).scrollTop() <= margin) {
-                $(".endless-pager .show-more").click();
+            var $more =  $(".endless-pager .show-more");
+            if (($(document).height() - $(window).height() - $(window).scrollTop() <= margin) && !$more.hasClass('clicked')) {
+                $more.addClass('clicked');
+                $more.click();
             }
         });
     });
