@@ -34,4 +34,8 @@ return [
         '\Mindy\Form\BaseForm', 'afterValidate',
         ['\Mindy\Form\BaseForm', 'afterValidate']
     ],
+    [
+        '\Mindy\Form\BaseForm', 'beforeSetAttributes',
+        ['\Mindy\Form\BaseForm', 'beforeSetAttributes']
+    ],
 ];
