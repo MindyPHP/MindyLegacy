@@ -19,3 +19,6 @@ install_module 'Menu'
 install_module 'Pages'
 install_module 'Sitemap'
 install_module 'User'
+
+cd ../../www/
+git clone https://github.com/studio107/static_admin.git
