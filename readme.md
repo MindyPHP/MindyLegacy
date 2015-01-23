@@ -3,6 +3,7 @@
 ```
 cd /tmp
 git clone git@github.com:studio107/Mindy.git
+sh ./install.sh
 cd Mindy/app
 composer install
 cd ../www/static
