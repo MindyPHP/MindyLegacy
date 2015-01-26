@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block breadcrumbs %}{% endblock %}
+
+{% block seo %}{% endblock %}
+
+{% block content %}
+    <section class="error-page">
+        <section class="error-data">
+            <section class="error-code">
+                {% block error_code %}
+                    404
+                {% endblock %}
+            </section>
+            <section class="error-info">
+                <section class="multiline">
+                    <section class="error-title">
+                        {% block error_title %}
+                            Страница не найдена
+                        {% endblock %}
+                    </section>
+                    <section class="error-description">
+                        {% block error_description %}
+                            <a href="/">На главную &rarr;</a>
+                        {% endblock %}
+                    </section>
+                </section>
+            </section>
+            <p class="clear"></p>
+        </section>
+    </section>
+{% endblock %}
