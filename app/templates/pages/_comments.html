@@ -1,6 +1,6 @@
 {% if model.enable_comments_form %}
     <section class="comments-form-holder">
-        <form method="post" action="{% url 'page.comment_send' model.url %}?_next={{ request.path }}" class="comments-form ajax-validation">
+        <form method="post" action="{% url 'page:comment_send' model.url %}?_next={{ request.path }}" class="comments-form ajax-validation">
             {% csrf_token %}
             <section style="display: none;">
                 {{ form.asUl(['parent'])|raw }}
@@ -54,4 +54,4 @@
     {% endfor %}
 </ul>
 
-{{ pager.render() }}
+{{ pager.render()|raw }}

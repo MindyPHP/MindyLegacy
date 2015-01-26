@@ -1,3 +1,4 @@
+{% if request.flash.count() > 0 %}
 <section class="row">
     <ul class="large-12 flash-list">
         {% for key, value in request.flash.all() %}
@@ -5,3 +6,4 @@
         {% endfor %}
     </ul>
 </section>
+{% endif %}

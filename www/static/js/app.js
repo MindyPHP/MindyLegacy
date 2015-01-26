@@ -48,6 +48,23 @@ $(function () {
         });
         return false;
     });
+
+    /* Fancybox defaults */
+    $('.lightview').attr('rel', 'gallery').fancybox({
+        openEffect  : 'none',
+        closeEffect : 'none',
+        helpers : {
+            buttons : {}
+        }
+    });
+
+    $('.fancybox-media').fancybox({
+        openEffect  : 'none',
+        closeEffect : 'none',
+        helpers : {
+            media : {}
+        }
+    });
 });
 
 

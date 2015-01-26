@@ -69,3 +69,73 @@
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   @include mmodal-media
 }
+
+/* Preloader */
+@mixin crossbrowser($name, $value) {
+  -webkit-#{$name}: $value;
+  -khtml-#{$name}: $value;
+  -moz-#{$name}: $value;
+  -o-#{$name}: $value;
+  #{$name}: $value;
+}
+
+.mmodal-loader {
+  display: none;
+}
+
+body.mmodal-loading {
+  overflow: hidden;
+  $preloaderSize: 30px;
+
+  .mmodal-loader {
+    display: block;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.76);
+
+    &:before {
+      content: '';
+      position: fixed;
+      width: $preloaderSize;
+      height: $preloaderSize;
+      left: 50%;
+      top: 50%;
+      margin-left: -$preloaderSize/2;
+      margin-top: -$preloaderSize/2;
+      background-color: #fff;
+      @include border-radius($preloaderSize/2);
+    }
+
+    &:after {
+      $arrowHeight: $preloaderSize/2;
+      content: '';
+      position: fixed;
+      width: 2px;
+      background-color: #000;
+      height: $arrowHeight;
+      left: 50%;
+      top: 50%;
+      margin-left: -1px;
+      margin-top: -$arrowHeight + 2px;
+
+      @include crossbrowser(transform-origin, 50% $arrowHeight - 2px);
+      @include crossbrowser(animation-name, spin);
+      @include crossbrowser(animation-iteration-count, infinite);
+      @include crossbrowser(animation-duration, 1s);
+    }
+  }
+}
+
+@include keyframes(spin) {
+  0% {
+    @include transform(rotate(0deg));
+  }
+
+  100% {
+    @include transform(rotate(360deg));
+  }
+}

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block breadcrumbs %}{% endblock %}
+
+{% block seo %}{% endblock %}
+
+{% block content %}
+    <section class="error-page">
+        <section class="error-data">
+            <section class="error-code">
+                {% block error_code %}
+                    404
+                {% endblock %}
+            </section>
+            <section class="error-info">
+                <section class="multiline">
+                    <section class="error-title">
+                        {% block error_title %}
+                            {{ t('The requested page does not exist.', 'core.errors') }}
+                        {% endblock %}
+                    </section>
+                    <section class="error-description">
+                        {% block error_description %}
+                            <a href="/">{{ t('Home page', 'core') }} &rarr;</a>
+                        {% endblock %}
+                    </section>
+                </section>
+            </section>
+            <p class="clear"></p>
+        </section>
+    </section>
+{% endblock %}
