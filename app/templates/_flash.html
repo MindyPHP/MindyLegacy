@@ -1,7 +1,10 @@
+{% set flash_messages = request.flash.all() %}
+{% if flash_messages %}
 <section class="row">
     <ul class="large-12 flash-list">
-        {% for key, value in request.flash.all() %}
+        {% for key, value in flash_messages %}
             <li class="{{ key }}">{{ value }}</li>
         {% endfor %}
     </ul>
 </section>
+{% endif %}
