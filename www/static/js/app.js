@@ -11,22 +11,9 @@ $(function () {
     $(document).on('click', 'a.mmodal', function (e) {
         e.preventDefault();
         var $this = $(this);
-        var $body = $('body');
-        var $wrapper = $('#wrapper');
-        /* Disable double-loading */
-        if (!$body.hasClass('mmodal-loading')) {
-            $this.addClass('loading');
-            $body.addClass('mmodal-loading');
-            $wrapper.append("<div class='mmodal-loader'></div>");
-            $this.mmodal({
-                width: $this.data('width'),
-                onAfterOpen: function(){
-                    $body.removeClass('mmodal-loading');
-                    $this.removeClass('loading');
-                    $wrapper.find('.mmodal-loader').remove();
-                }
-            });
-        }
+        $this.mmodal({
+            width: $this.data('width')
+        });
         return false;
     });
 

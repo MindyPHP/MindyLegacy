@@ -16,12 +16,12 @@
                 <section class="multiline">
                     <section class="error-title">
                         {% block error_title %}
-                            Страница не найдена
+                            {{ t('The requested page does not exist.', 'core.errors') }}
                         {% endblock %}
                     </section>
                     <section class="error-description">
                         {% block error_description %}
-                            <a href="/">На главную &rarr;</a>
+                            <a href="/">{{ t('Home page', 'core') }} &rarr;</a>
                         {% endblock %}
                     </section>
                 </section>

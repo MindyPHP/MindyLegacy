@@ -12,7 +12,7 @@
     "animate.css": "~3.2.0",
     "pace": "~1.0.1",
     "underscore": "~1.7.0",
-    "mmodal": "~1.0.3"
+    "mmodal": "~1.0.5"
   },
   "devDependencies": {}
 }
