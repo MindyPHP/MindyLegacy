@@ -1,0 +1,38 @@
+.mmodal-loader {
+  display: none;
+}
+
+#wrapper {
+  position: relative;
+}
+
+body.mmodal-loading {
+  overflow: hidden;
+
+  #wrapper {
+    .mmodal-loader {
+      display: block;
+      position: absolute;
+      z-index: 10000;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      background-color: rgba(0,0,0,0.76);
+
+      &:after {
+        content: '';
+        position: fixed;
+        width: 100px;
+        height: 100px;
+        left: 50%;
+        top: 50%;
+        margin-left: -50px;
+        margin-top: -50px;
+        background-image: url('../images/mmodal/preloader.gif');
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}
