@@ -13,6 +13,7 @@ npm install && bower install
 cd ..
 sh ./up.sh
 php index.php db sync
+php index.php user createsuperuser
 mkdir ../app/runtime
 chmod -R 0777 ../app/runtime
 ```
