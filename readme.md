@@ -11,6 +11,7 @@ npm install && bower install
 cd ../static_admin
 npm install && bower install
 cd ..
+sh ./up.sh
 php index.php db sync
 mkdir ../app/runtime
 chmod -R 0777 ../app/runtime
