@@ -38,7 +38,7 @@
         "frandieguez/panorama-php": "1.0.7",
         "mindy/application": "0.1",
         "mindy/tests": "0.1",
-        "mindy/table": "0.2.1"
+        "mindy/table": "0.2.2"
     },
     "require-dev": {
         "phpunit/phpunit": "3.7.32",
