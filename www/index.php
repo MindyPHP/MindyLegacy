@@ -5,6 +5,7 @@ defined('MINDY_PATH') or define('MINDY_PATH', dirname(__FILE__) . DIRECTORY_SEPA
 $debug = true;
 if ($debug) {
     defined('YII_DEBUG') or define('YII_DEBUG', true);
+    defined('MINDY_DEBUG') or define('MINDY_DEBUG', true);
     defined('YII_TRACE_LEVEL') or define('YII_TRACE_LEVEL', 3);
     defined('YII_ENABLE_ERROR_HANDLER') or define('YII_ENABLE_ERROR_HANDLER', true);
     defined('YII_ENABLE_EXCEPTION_HANDLER') or define('YII_ENABLE_EXCEPTION_HANDLER', true);
