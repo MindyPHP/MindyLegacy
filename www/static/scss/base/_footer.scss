@@ -1,4 +1,3 @@
-@import "compass/layout/sticky-footer";
 @include sticky-footer($footer-height, "#wrapper", "#push", "#footer");
 
 #footer {
@@ -6,15 +5,15 @@
   line-height: $footer-height;
   font-size: 13px;
   color: #a5a5a5;
-  .inline-block{
+  .inline-block {
     line-height: 1.3;
     margin-left: 39px;
-    &.about{
+    &.about {
       margin-left: 0px;
     }
-    &.skype{
+    &.skype {
 
-      a{
+      a {
         background: transparent url("../images/skype-footer.png") 0 0 no-repeat;
         height: 23px;
         line-height: 23px;
@@ -23,35 +22,35 @@
 
       }
     }
-    &.mail-contacts{
-      i{
+    &.mail-contacts {
+      i {
         font-size: 13px;
         margin-right: 6px;
       }
     }
-    &.social-contacts{
-      span{
+    &.social-contacts {
+      span {
         line-height: 26px;
         margin-right: 6px;
       }
-      ul{
-        &:after{
+      ul {
+        &:after {
           content: '';
           display: block;
           width: 100%;
           clear: both;
         }
-        li{
+        li {
           @include float-left;
           margin-left: 6px;
         }
       }
     }
   }
-  a{
+  a {
     font-size: 13px;
     color: #a5a5a5;
-    i{
+    i {
       font-size: 23px;
     }
   }

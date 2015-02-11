@@ -9,6 +9,7 @@ var concat = require('gulp-concat'),
     changed = require('gulp-changed'),
     clean = require('gulp-clean'),
     cache = require('gulp-cached'),
+    coffee = require('gulp-coffee'),
     livereload = require('gulp-livereload');
 
 var version = '1.0.0';
@@ -29,11 +30,6 @@ var sassOpts = {
         'vendor/mindy-sass/mindy'
     ]
 };
-if (process.env.USER == 'aleksandrgordeev') {
-    sassOpts.includePaths.push('/Library/Ruby/Gems/1.8/gems/compass-0.12.6/frameworks/compass/stylesheets');
-} else {
-    sassOpts.includePaths.push('/Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets');
-}
 
 var dst = {
     js: 'dist/js',
@@ -71,6 +67,7 @@ var paths = {
         'js/chat.js',
         'js/app.js'
     ],
+    coffee: 'js/**/*.coffee',
     images: [
         'images/**/*'
     ],
@@ -93,21 +90,34 @@ var paths = {
 
 gulp.task('fonts', function() {
     return gulp.src(paths.fonts)
-        .pipe(gulp.dest(dst.fonts));
+        .pipe(gulp.dest(dst.fonts))
+        .pipe(livereload());
 });
 
-gulp.task('js', function() {
+gulp.task('coffee', function() {
+    gulp.src(paths.coffee)
+        .pipe(coffee({
+            bare: true
+        }).on('error', function(err) {
+            console.log(err);
+        }))
+        .pipe(gulp.dest(dst.js))
+});
+
+gulp.task('js', ['coffee'], function() {
     return gulp.src(paths.js)
-        //        .pipe(uglify())
+        .pipe(uglify())
         .pipe(concat(version + '.all.js'))
-        .pipe(gulp.dest(dst.js));
+        .pipe(gulp.dest(dst.js))
+        .pipe(livereload());
 });
 
 gulp.task('images', function() {
     return gulp.src(paths.images)
         .pipe(changed(dst.images))
-        .pipe(cache('imagemin', imagesOpts))
-        .pipe(gulp.dest(dst.images));
+        .pipe(imagemin(imagesOpts))
+        .pipe(gulp.dest(dst.images))
+        .pipe(livereload());
 });
 
 gulp.task('sass', function() {
@@ -115,25 +125,22 @@ gulp.task('sass', function() {
         .pipe(sass(sassOpts))
         .pipe(gulp.dest(dst.sass));
 });
+
 gulp.task('css', ['sass'], function() {
     return gulp.src(paths.css)
         .pipe(minifyCSS(minifyOpts))
         .pipe(concat(version + '.all.css'))
-        .pipe(gulp.dest(dst.css));
+        .pipe(gulp.dest(dst.css))
+        .pipe(livereload());
 });
 
 // Rerun the task when a file changes
 gulp.task('watch', ['default'], function() {
-    var server = livereload(),
-        liveReloadCallback = function(file) {
-            setTimeout(function() {
-                server.changed(file.path);
-            }, 300);
-        };
+    livereload.listen();
 
-    gulp.watch(paths.js, ['js']).on('change', liveReloadCallback);
+    gulp.watch(paths.js, ['js']);
     gulp.watch(paths.images, ['images']);
-    gulp.watch(paths.sass, ['css']).on('change', liveReloadCallback);
+    gulp.watch(paths.sass, ['css']);
 });
 
 // Clean
