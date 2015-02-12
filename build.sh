@@ -1,11 +1,11 @@
 #!/bin/bash
 
-GITHUB_TOKEN=$(cat ~/.github_token)
+export GITHUB_TOKEN=$(cat ~/.github_token)
 VERSION=$(git describe --abbrev=0 --tags)
 DATE=$(date +'%d-%m-%Y')
 NAME=mindy-$VERSION-$DATE.tar.gz
 
-GZIP=-9 tar --exclude=../build --exclude=node_modules --exclude=../.git -zcvf $NAME ../
+GZIP=-9 tar --exclude=build --exclude=node_modules --exclude=.git -zcvf $NAME ./
 
 openssl dgst -sha256 $NAME > $NAME.sha256
 openssl dgst -md5 $NAME > $NAME.md5
