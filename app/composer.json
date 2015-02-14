@@ -17,7 +17,7 @@
         "mindy/orm": "0.9.4",
         "mindy/cache": "0.*",
         "mindy/base": "0.*",
-        "mindy/form": "0.*",
+        "mindy/form": "0.1.2",
         "mindy/pagination": "0.*",
         "mindy/finder": "0.*",
         "cebe/markdown": "*",
