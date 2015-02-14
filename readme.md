@@ -71,5 +71,7 @@ chmod -R 0777 ../app/runtime
 # IRC
 
 Сервер: `irc.freenode.net`
+
 Порт: `6667`
+
 Канал: `#mindy`
