@@ -67,3 +67,9 @@ chmod -R 0777 ../app/runtime
 [![Coverage Status](https://coveralls.io/repos/studio107/Mindy_Form/badge.png)](https://coveralls.io/r/studio107/Mindy_Form)
 [![Latest Stable Version](https://poser.pugx.org/mindy/form/v/stable.svg)](https://packagist.org/packages/form/validation)
 [![Total Downloads](https://poser.pugx.org/mindy/form/downloads.svg)](https://packagist.org/packages/form/validation)
+
+# IRC
+
+Сервер: `irc.freenode.net`
+Порт: `6667`
+Канал: `#mindy`
