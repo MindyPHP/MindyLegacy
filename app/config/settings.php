@@ -82,7 +82,7 @@ return [
         ],
         'template' => [
             'class' => '\Mindy\Template\Renderer',
-            'mode' => MINDY_DEBUG ? Renderer::RECOMPILE_ALWAYS : Renderer::RECOMPILE_NORMAL,
+            'mode' => MINDY_DEBUG ? Renderer::RECOMPILE_ALWAYS : Renderer::RECOMPILE_NEVER,
         ],
         'errorHandler' => [
             'class' => '\Mindy\Base\ErrorHandler',
