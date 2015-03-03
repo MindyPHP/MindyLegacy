@@ -23,9 +23,6 @@ return \Mindy\Utils\Settings::override(require(dirname(__FILE__) . '/settings.ph
         'middleware' => [
             'class' => '\Mindy\Middleware\MiddlewareManager',
             'middleware' => [
-                'AjaxRedirectMiddleware' => [
-                    'class' => '\Mindy\Middleware\AjaxRedirectMiddleware'
-                ],
                 'CurrentSiteMiddleware' => [
                     'class' => '\Modules\Sites\Middleware\CurrentSiteMiddleware'
                 ],
