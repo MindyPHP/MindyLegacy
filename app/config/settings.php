@@ -1,6 +1,8 @@
 <?php
 
 use Mindy\Helper\Params;
+use Mindy\Template\Renderer;
+use Mindy\Helper\Console;
 
 return [
     'basePath' => dirname(__FILE__) . '/../',
@@ -80,8 +82,7 @@ return [
         ],
         'template' => [
             'class' => '\Mindy\Template\Renderer',
-            // 'mode' => YII_DEBUG ? \Mindy\Template\Renderer::RECOMPILE_ALWAYS : \Mindy\Template\Renderer::RECOMPILE_NORMAL,
-            'mode' => \Mindy\Template\Renderer::RECOMPILE_ALWAYS,
+            'mode' => MINDY_DEBUG ? Renderer::RECOMPILE_ALWAYS : Renderer::RECOMPILE_NEVER,
         ],
         'errorHandler' => [
             'class' => '\Mindy\Base\ErrorHandler',
@@ -91,6 +92,7 @@ return [
         'session' => [
             'class' => '\Modules\User\Components\UserSession',
             'sessionName' => 'mindy',
+            'autoStart' => !Console::isCli()
         ],
         'generator' => [
             'class' => '\Mindy\Base\Generator'
