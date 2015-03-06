@@ -1,9 +1,9 @@
-$(function(){
+$(function () {
     function handleForm($form, errors) {
         var hasErrors = 0;
         for (var key in errors) hasErrors++;
 
-        $form.find('input, select, textarea').each(function(){
+        $form.find('input, select, textarea').each(function () {
             var $this = $(this);
             var id = $(this).attr('id');
             var errorsId = id + '_errors';
@@ -12,13 +12,13 @@ $(function(){
                 $errors.html('');
                 var name = $this.attr('name');
                 if (errors[name]) {
-                    $errors.css('display','');
+                    $errors.css('display', '');
                     var inputErrors = errors[name];
                     for (var key in inputErrors) {
                         var error = inputErrors[key];
                         $errors.append($('<li/>').text(error));
                     }
-                }else {
+                } else {
                     $errors.css('display', 'none');
                 }
             }
@@ -26,12 +26,12 @@ $(function(){
         if (!hasErrors) {
             $form.data('validated', true);
             $form.submit();
-        }else{
+        } else {
             $form.data('validated', false);
         }
     }
 
-    $(document).on('submit', 'form.ajax-validation', function(e){
+    $(document).on('submit', 'form.ajax-validation', function (e) {
         if (!$(this).data('validated')) {
             e.preventDefault();
 
@@ -50,7 +50,7 @@ $(function(){
                 'type': method,
                 'data': data,
                 'dataType': 'json',
-                'success': function(data){
+                'success': function (data) {
                     handleForm($this, data);
                 }
             });
