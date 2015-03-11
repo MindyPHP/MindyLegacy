@@ -1,4 +1,4 @@
-# Установка
+# Installation
 
 ```
 cd /tmp
@@ -16,6 +16,10 @@ php index.php db sync
 mkdir ../app/runtime
 chmod -R 0777 ../app/runtime
 ```
+
+# Demo
+
+[demo site](http://demo.mindy-cms.com/)
 
 # Components
 
