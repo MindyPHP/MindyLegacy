@@ -1,11 +1,15 @@
+window.formValidation = {};
+
 $(function () {
     function handleForm($form, errors) {
         var hasErrors = 0;
-        for (var key in errors) hasErrors++;
+        for (var key in errors) {
+            hasErrors++;
+        }
 
         $form.find('input, select, textarea').each(function () {
             var $this = $(this);
-            var id = $(this).attr('id');
+            var id = $this.attr('id');
             var errorsId = id + '_errors';
             var $errors = $('ul#' + errorsId);
             if ($errors.length) {
@@ -23,19 +27,26 @@ $(function () {
                 }
             }
         });
+
         if (!hasErrors) {
-            $form.data('validated', true);
+            formValidation[$form.attr('id')] = true;
             $form.submit();
         } else {
-            $form.data('validated', false);
+            formValidation[$form.attr('id')] = false;
         }
     }
 
     $(document).on('submit', 'form.ajax-validation', function (e) {
-        if (!$(this).data('validated')) {
+        var $this = $(this);
+
+        if (formValidation[$(this).attr('id')] == false) {
+            $this.find('input, select, textarea').each(function () {
+                var errorsId = $(this).attr('id') + '_errors';
+                $('ul#' + errorsId).css('display', 'none');
+            });
+        } else {
             e.preventDefault();
 
-            var $this = $(this);
             var url = $this.attr('action');
             var method = $this.attr('method');
             if (!method) {
@@ -46,15 +57,14 @@ $(function () {
             data += (data ? '&' : '') + 'ajax_validation=1';
 
             $.ajax({
-                'url': url,
-                'type': method,
-                'data': data,
-                'dataType': 'json',
-                'success': function (data) {
+                url: url,
+                type: method,
+                data: data,
+                dataType: 'json',
+                success: function (data) {
                     handleForm($this, data);
                 }
             });
-
 
             return false;
         }
