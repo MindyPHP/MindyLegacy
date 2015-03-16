@@ -1,5 +1,6 @@
 #!/bin/bash
 
+mkdir -p app/Modules;
 cd app/Modules;
 
 install_module() {
