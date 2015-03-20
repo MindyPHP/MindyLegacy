@@ -5,8 +5,8 @@
     "type": "library",
     "license": "BSD-3-Clause",
     "autoload": {
-        "psr-0": {
-            "": "src/"
+        "psr-4": {
+            "Modules\\": "Modules"
         }
     },
     "config": {
