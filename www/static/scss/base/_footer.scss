@@ -1,63 +1,18 @@
 @include sticky-footer($footer-height, "#wrapper", "#push", "#footer");
 
 #footer {
-
+  background-color: #474747;
   line-height: $footer-height;
   font-size: 13px;
   color: #a5a5a5;
+
+  a {
+    color: #a5a5a5;
+  }
+
   .inline-block {
     line-height: 1.3;
-    margin-left: 39px;
-    &.about {
-      margin-left: 0px;
-    }
-    &.skype {
-
-      a {
-        background: transparent url("../images/skype-footer.png") 0 0 no-repeat;
-        height: 23px;
-        line-height: 23px;
-        display: block;
-        text-indent: 30px;
-
-      }
-    }
-    &.mail-contacts {
-      i {
-        font-size: 13px;
-        margin-right: 6px;
-      }
-    }
-    &.social-contacts {
-      span {
-        line-height: 26px;
-        margin-right: 6px;
-      }
-      ul {
-        &:after {
-          content: '';
-          display: block;
-          width: 100%;
-          clear: both;
-        }
-        li {
-          @include float-left;
-          margin-left: 6px;
-        }
-      }
-    }
-  }
-  a {
-    font-size: 13px;
-    color: #a5a5a5;
-    i {
-      font-size: 23px;
-    }
-  }
-  &.top-line {
-    .footer-data {
-      border-top: 1px solid #dde3e7;
-    }
+    vertical-align: middle;
   }
 
   .author {
@@ -68,11 +23,11 @@
 
     .author-icon {
       color: #a5a5a5;
-
       display: inline-block;
       vertical-align: middle;
-
       font-size: 35px;
+      height: 50px;
+      line-height: 50px;
     }
 
     .author-info {

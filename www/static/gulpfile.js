@@ -79,7 +79,6 @@ var paths = {
     sass: 'scss/**/*.scss',
     css: [
         'vendor/slick-carousel/slick/slick.css',
-        'vendor/jquery.mnotifyajax/css/jquery.mnotifyajax.css',
         'css/**/*.css',
 
         'fonts/glyphico-social/css/glyphico-social.css',
