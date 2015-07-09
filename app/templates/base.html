@@ -22,12 +22,11 @@
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="/favicon.png" type="image/png">
-    <link rel="apple-touch-icon" href="/favicon72px.png">
-    <link rel="apple-touch-icon-precomposed" media="screen and (resolution: 163dpi)" href="/favicon57px.png" />
-    <link rel="apple-touch-icon-precomposed" media="screen and (resolution: 132dpi)" href="/favicon72px.png" />
-    <link rel="apple-touch-icon-precomposed" media="screen and (resolution: 326dpi)" href="/favicon114px.png" />
 </head>
 <body>
+
+{% include '_statistics.html' %}
+
 <section id="wrapper">
     <header id="header">
         <section class="header-inner row">
@@ -90,27 +89,27 @@
                     </section>
 
                     <section class="inline-block address-info right">
-                            <section class="author">
-                                <section class="author-info">
-                                    Разработка сайта<br/>
-                                    <address>
+                        <section class="author">
+                            <section class="author-info">
+                                Разработка сайта<br/>
+                                <address>
                                     <a class="transparent-link" href="http://studio107.ru" target="_blank">
                                         Студия 107 &copy; {{ "now"|date("Y") }}
                                     </a>
-                                    </address>
-                                </section>
-                                <section class="author-icon">
-                                    <i class="icon-107"></i>
-                                </section>
+                                </address>
                             </section>
+                            <section class="author-icon">
+                                <i class="icon-107"></i>
+                            </section>
+                        </section>
                     </section>
                 </section>
             </section>
         </section>
     </section>
-    </section>
+</section>
 
-    {% block js %}{% endblock %}
+{% block js %}{% endblock %}
 
 </body>
 </html>
