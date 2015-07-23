@@ -97,6 +97,43 @@ return [
         'generator' => [
             'class' => '\Mindy\Base\Generator'
         ],
+        'logger' => [
+            'class' => '\Mindy\Logger\LoggerManager',
+            'handlers' => [
+                'default' => [
+                    'class' => '\Mindy\Logger\Handler\RotatingFileHandler',
+                    'level' => MINDY_DEBUG ? "DEBUG" : "ERROR"
+                ],
+                'null' => [
+                    'class' => '\Mindy\Logger\Handler\NullHandler',
+                    'level' => 'ERROR'
+                ],
+                'console' => [
+                    'class' => '\Mindy\Logger\Handler\StreamHandler',
+                ],
+                'users' => [
+                    'class' => '\Mindy\Logger\Handler\RotatingFileHandler',
+                    'alias' => 'application.runtime.users',
+                    'level' => 'INFO',
+                    'formatter' => 'users'
+                ],
+                'mail_admins' => [
+                    'class' => '\Mindy\Logger\Handler\SwiftMailerHandler',
+                ],
+            ],
+            'formatters' => [
+                'users' => [
+                    'class' => '\Mindy\Logger\Formatters\LineFormatter',
+                    'format' => "%datetime% %message%\n"
+                ]
+            ],
+            'loggers' => [
+                'users' => [
+                    'class' => '\Monolog\Logger',
+                    'handlers' => ['users'],
+                ],
+            ]
+        ],
     ],
     'preload' => [
         'log',
