@@ -39,7 +39,7 @@ $(function () {
     $(document).on('submit', 'form.ajax-validation', function (e) {
         var $this = $(this);
 
-        if (formValidation[$(this).attr('id')] == false) {
+        if (formValidation[$(this).attr('id')]) {
             $this.find('input, select, textarea').each(function () {
                 var errorsId = $(this).attr('id') + '_errors';
                 $('ul#' + errorsId).css('display', 'none');
