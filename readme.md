@@ -1,6 +1,6 @@
 # Installation
 
-```
+```bash
 # cd <project_dir>
 # clone main repository
 git clone git@github.com:studio107/Mindy.git .
