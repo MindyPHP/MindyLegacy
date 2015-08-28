@@ -9,8 +9,8 @@ sh ./install.sh
 # install composer
 cd ./app
 composer install
-# Copy app/config/settings_local.php.dist app/config/settings_local.php
-# Edit db connection settings in app/config/settings_local.php
+# copy app/config/settings_local.php.dist app/config/settings_local.php
+# edit db connection settings in app/config/settings_local.php
 # create tables in database
 php www/index.php db sync
 # create superuser
