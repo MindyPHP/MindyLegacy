@@ -8,8 +8,6 @@
     <meta charset="utf-8">
     {% block seo %}{{ meta(this) }}{% endblock %}
     <meta name="author" content="Studio107">
-    <meta name='yandex-verification' content='4280b4fe8b365ca5'>
-    <meta name="robots" content="noindex, nofollow">
     {% block head %}{% endblock %}
 
     <meta name="DC.title" content="Studio107">
@@ -17,8 +15,8 @@
 
     {% block css %}{% endblock %}
 
-    <link rel="stylesheet" href="/static/dist/css/1.0.0.all.css"/>
-    <script type="application/javascript" src="/static/dist/js/1.0.0.all.js"></script>
+    <link rel="stylesheet" href="/static/css/reset.css"/>
+    <link rel="stylesheet" href="/static/css/screen.css"/>
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="/favicon.png" type="image/png">
@@ -30,14 +28,7 @@
 <section id="wrapper">
     <header id="header">
         <section class="header-inner row">
-            <section class="columns large-3">
-                <section class="logo">
-                    <a class="logo-link" href="/">
-                        <img src="/static/dist/images/main/logo.png" alt=""/>
-                    </a>
-                </section>
-            </section>
-            <section class="columns large-9">
+            <section class="columns small-12">
                 <div class="menu-holder">
                     <menu class="menu no-bullet main-menu justify">
                         {{ get_menu('main-menu')|safe }}
@@ -77,36 +68,7 @@
 </section>
 
 <section id="footer">
-    <section id="footer-inner">
-        <section class="row">
-            <section class="column large-12">
-                <section class="footer-data">
-                    <section class="inline-block about">
-                        <section class="footer-multiline">
-                            {{ param('core.core.sitename') }}<br/>
-                            Все права защищены.
-                        </section>
-                    </section>
-
-                    <section class="inline-block address-info right">
-                        <section class="author">
-                            <section class="author-info">
-                                Разработка сайта<br/>
-                                <address>
-                                    <a class="transparent-link" href="http://studio107.ru" target="_blank">
-                                        Студия 107 &copy; {{ "now"|date("Y") }}
-                                    </a>
-                                </address>
-                            </section>
-                            <section class="author-icon">
-                                <i class="icon-107"></i>
-                            </section>
-                        </section>
-                    </section>
-                </section>
-            </section>
-        </section>
-    </section>
+    Mindy CMS &copy; {{ "now"|date("Y") }}
 </section>
 
 {% block js %}{% endblock %}

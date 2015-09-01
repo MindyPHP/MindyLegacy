@@ -10,9 +10,9 @@ return [
     '/core/engine' => new Patterns('Modules.Core.urls', 'core'),
     '/mail' => new Patterns('Modules.Mail.urls', 'mail'),
 
-    '/sitemap.xml' => new Patterns('Modules.Sitemap.urls_index', 'sitemap_index'),
     '/sitemap' => new Patterns('Modules.Sitemap.urls', 'sitemap'),
     
     '/robots.txt' => new Patterns('Modules.Sites.urls', 'sites'),
-    '/' => new Patterns('Modules.Pages.urls', 'page'),
+    '/pages/' => new Patterns('Modules.Pages.urls', 'page'),
+    '/' => new Patterns('Modules.Dummy.urls', 'dummy'),
 ];
