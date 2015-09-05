@@ -136,7 +136,7 @@ return [
         ],
     ],
     'preload' => [
-        'log',
+        'logger',
         'db',
     ],
     'modules' => include(__DIR__ . '/modules.php')
