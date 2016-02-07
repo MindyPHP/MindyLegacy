@@ -24,12 +24,6 @@ return [
         'middleware' => [
             'class' => '\Mindy\Middleware\MiddlewareManager',
             'middleware' => [
-                'CurrentSiteMiddleware' => [
-                    'class' => '\Modules\Sites\Middleware\CurrentSiteMiddleware'
-                ],
-                'RedirectMiddleware' => [
-                    'class' => '\Modules\Redirect\Middleware\RedirectMiddleware'
-                ],
             ]
         ],
 
