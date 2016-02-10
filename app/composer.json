@@ -1,48 +1,54 @@
 {
-  "name": "mindy/one",
-  "homepage": "http://studio107.ru",
-  "version": "0.7",
-  "type": "library",
-  "license": "BSD-3-Clause",
-  "autoload": {
-    "psr-4": {
-      "Modules\\": "Modules"
-    }
-  },
-  "config": {
-    "cache-files-ttl": 0
-  },
-  "require": {
-    "php": ">=5.4",
-    "mindy/orm": "0.*",
-    "mindy/cache": "0.*",
-    "mindy/base": "0.*",
-    "mindy/form": "0.*",
-    "mindy/pagination": "0.*",
-    "mindy/finder": "0.*",
-    "cebe/markdown": "*",
-    "mindy/router": "0.*",
-    "mindy/mail": "0.*",
-    "mindy/storage": "0.*",
-    "mindy/logger": "1.*",
-    "imagine/imagine": "^0.6.2",
-    "mindy/template": "1.*",
-    "mindy/console": "0.*",
-    "mindy/controller": "0.*",
-    "mindy/security": "0.*",
-    "mindy/session": "0.*",
-    "mindy/event": "0.*",
-    "mindy/application": "0.*",
-    "mindy/tests": "0.*",
-    "mindy/table": "0.*"
-  },
-  "require-dev": {},
-  "authors": [
-    {
-      "name": "Maxim Falaleev",
-      "email": "max@studio107.ru",
-      "homepage": "http://studio107.ru",
-      "role": "Developer"
-    }
-  ]
+    "name": "mindy/one",
+    "homepage": "http://studio107.ru",
+    "version": "0.7",
+    "type": "library",
+    "license": "BSD-3-Clause",
+    "autoload": {
+        "psr-4": {
+            "Modules\\": "Modules"
+        }
+    },
+    "config": {
+        "cache-files-ttl": 0
+    },
+    "require": {
+        "php": ">=5.4",
+        "mindy/orm": "0.9.4",
+        "mindy/cache": "0.*",
+        "mindy/base": "0.*",
+        "mindy/form": "0.*",
+        "mindy/pagination": "0.*",
+        "mindy/finder": "0.*",
+        "cebe/markdown": "*",
+        "mindy/router": "0.*",
+        "mindy/mail": "0.*",
+        "mindy/storage": "0.*",
+        "mindy/logger": "1.*",
+        "imagine/imagine": "v0.5.0",
+        "mindy/update": "0.*",
+        "mindy/template": "1.*",
+        "mindy/console": "0.*",
+        "mindy/controller": "0.*",
+        "mindy/security": "0.*",
+        "mindy/session": "0.*",
+        "mindy/event": "0.*",
+        "mindy/application": "0.*",
+        "mindy/tests": "0.*",
+        "mindy/table": "0.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.32",
+        "phpunit/php-invoker": "1.1.3",
+        "phpunit/dbunit": "1.3.1",
+        "phpunit/phpunit-selenium": "1.3.3",
+        "phpunit/phpunit-story": "1.0.2",
+        "satooshi/php-coveralls": "dev-master"
+    },
+    "authors": [{
+        "name": "Maxim Falaleev",
+        "email": "max@studio107.ru",
+        "homepage": "http://studio107.ru",
+        "role": "Developer"
+    }]
 }
