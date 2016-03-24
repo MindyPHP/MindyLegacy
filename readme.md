@@ -1,3 +1,5 @@
+![:)](https://pp.vk.me/c631918/v631918218/21a33/sUXTu6oTN-U.jpg)
+
 # Installation
 
 ```bash
