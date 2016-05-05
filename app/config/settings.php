@@ -45,10 +45,20 @@ return [
             'class' => '\Modules\Mail\Components\DbMailer',
         ],
         'finder' => [
-            'class' => '\Mindy\Finder\FinderFactory',
-        ],
-        'authGenerator' => [
-            'class' => 'MPermissionGenerator'
+            'class' => '\Mindy\Finder\Finder',
+            'finders' => [
+                ['class' => '\Mindy\Finder\Finder\TemplateFinder'],
+                /*
+                [
+                    'class' => '\Mindy\Finder\Finder\ThemeTemplateFinder',
+                    'theme' => function () {
+                        static $isMobile = false;
+                        return $isMobile ? 'mobile' : 'default';
+                    }
+                ],
+                */
+                ['class' => '\Mindy\Finder\Finder\AppTemplateFinder'],
+            ],
         ],
         'request' => [
             'class' => '\Mindy\Http\Request',
