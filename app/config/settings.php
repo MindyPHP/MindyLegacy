@@ -1,19 +1,13 @@
 <?php
 
-use Mindy\Helper\Params;
 use Mindy\Template\Renderer;
 use Mindy\Helper\Console;
 
 return [
     'basePath' => dirname(__FILE__) . '/../',
     'name' => 'Mindy',
-    'behaviors' => [
-        'ParamsCollectionBehavior' => [
-            'class' => '\Mindy\Base\ParamsCollectionBehavior'
-        ],
-    ],
     'managers' => [
-        'qwe@qwe.com'
+        'admin@admin.com'
     ],
     'locale' => [
         'language' => 'ru',
@@ -53,9 +47,6 @@ return [
         'finder' => [
             'class' => '\Mindy\Finder\FinderFactory',
         ],
-        'authManager' => [
-            'class' => '\Modules\User\Components\Permissions\PermissionManager',
-        ],
         'authGenerator' => [
             'class' => 'MPermissionGenerator'
         ],
@@ -78,18 +69,10 @@ return [
             'class' => '\Mindy\Template\Renderer',
             'mode' => MINDY_DEBUG ? Renderer::RECOMPILE_ALWAYS : Renderer::RECOMPILE_NEVER,
         ],
-        'errorHandler' => [
-            'class' => '\Mindy\Base\ErrorHandler',
-            'adminInfo' => Params::get('core.email_webmaster'),
-            'errorAction' => 'core/main/error'
-        ],
         'session' => [
             'class' => '\Modules\User\Components\UserSession',
             'sessionName' => 'mindy',
             'autoStart' => !Console::isCli()
-        ],
-        'generator' => [
-            'class' => '\Mindy\Base\Generator'
         ],
         'logger' => [
             'class' => '\Mindy\Logger\LoggerManager',
