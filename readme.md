@@ -2,6 +2,8 @@
 
 # Installation
 
+[![Join the chat at https://gitter.im/MindyPHP/Mindy](https://badges.gitter.im/MindyPHP/Mindy.svg)](https://gitter.im/MindyPHP/Mindy?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ```bash
 # cd <project_dir>
 # clone main repository
