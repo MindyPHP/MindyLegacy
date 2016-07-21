@@ -27,10 +27,6 @@ chmod -R 0777 ./app/runtime
 
 [demo site](http://demo.mindy-cms.com/)
 
-# IRC
+# Status
 
-Сервер: `irc.freenode.net`
-
-Порт: `6667`
-
-Канал: `#mindy`
+[![Build Status](https://travis-ci.org/MindyPHP/Mindy_Form.svg?branch=master)](https://travis-ci.org/MindyPHP/Mindy_Form) Mindy_Form
