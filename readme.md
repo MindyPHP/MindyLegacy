@@ -32,3 +32,9 @@ chmod -R 0777 ./app/runtime
 [![Build Status](https://travis-ci.org/MindyPHP/Mindy_Form.svg?branch=master)](https://travis-ci.org/MindyPHP/Mindy_Form) Mindy_Form
 
 [![Build Status](https://travis-ci.org/MindyPHP/Mindy_Router.svg?branch=master)](https://travis-ci.org/MindyPHP/Mindy_Router) Mindy_Router
+
+[![Build Status](https://travis-ci.org/MindyPHP/Mindy_Orm.svg?branch=master)](https://travis-ci.org/MindyPHP/Mindy_Orm) Mindy_Orm
+
+[![Build Status](https://travis-ci.org/MindyPHP/Mindy_Query.svg?branch=master)](https://travis-ci.org/MindyPHP/Mindy_Query) Mindy_Query
+
+[![Build Status](https://travis-ci.org/MindyPHP/Mindy_QueryBuilder.svg?branch=master)](https://travis-ci.org/MindyPHP/Mindy_QueryBuilder) Mindy_QueryBuilder
