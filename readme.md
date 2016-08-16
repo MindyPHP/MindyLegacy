@@ -40,3 +40,5 @@ chmod -R 0777 ./app/runtime
 [![Build Status](https://travis-ci.org/MindyPHP/Mindy_QueryBuilder.svg?branch=master)](https://travis-ci.org/MindyPHP/Mindy_QueryBuilder) Mindy_QueryBuilder
 
 [![Build Status](https://travis-ci.org/MindyPHP/Mindy_Event.svg?branch=master)](https://travis-ci.org/MindyPHP/Mindy_Event) Mindy_Event
+
+[![Build Status](https://travis-ci.org/MindyPHP/Mindy_Console.svg?branch=master)](https://travis-ci.org/MindyPHP/Mindy_Console) Mindy_Console
