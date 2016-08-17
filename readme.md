@@ -48,3 +48,5 @@ chmod -R 0777 ./app/runtime
 [![Build Status](https://travis-ci.org/MindyPHP/Mindy_Helper.svg?branch=master)](https://travis-ci.org/MindyPHP/Mindy_Helper) Mindy_Helper
 
 [![Build Status](https://travis-ci.org/MindyPHP/Mindy_StatePersister.svg?branch=master)](https://travis-ci.org/MindyPHP/Mindy_StatePersister) Mindy_StatePersister
+
+[![Build Status](https://travis-ci.org/MindyPHP/Mindy_Cache.svg?branch=master)](https://travis-ci.org/MindyPHP/Mindy_Cache) Mindy_Cache
