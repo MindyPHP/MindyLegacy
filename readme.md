@@ -54,3 +54,5 @@ chmod -R 0777 ./app/runtime
 [![Build Status](https://travis-ci.org/MindyPHP/Mindy_Security.svg?branch=master)](https://travis-ci.org/MindyPHP/Mindy_Security) Mindy_Security
 
 [![Build Status](https://travis-ci.org/MindyPHP/Mindy_Controller.svg?branch=master)](https://travis-ci.org/MindyPHP/Mindy_Controller) Mindy_Controller
+
+[![Build Status](https://travis-ci.org/MindyPHP/Mindy_ErrorHandler.svg?branch=master)](https://travis-ci.org/MindyPHP/Mindy_ErrorHandler) Mindy_ErrorHandler
