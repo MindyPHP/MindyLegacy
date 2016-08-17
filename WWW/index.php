@@ -14,11 +14,6 @@ if ($debug) {
     $config .= '_local';
 }
 
-// Composer autoloader
-if (!is_file(MINDY_PATH . '../app/vendor/autoload.php')) {
-    throw new Exception("Please run 'composer install' in app/ directory");
-}
-
 $autoloader = include(MINDY_PATH . '../app/vendor/autoload.php');
 
 $app = \Mindy\Base\Mindy::getInstance($config . '.php');

@@ -2,45 +2,39 @@
   "name": "mindy/mindy",
   "type": "metapackage",
   "homepage": "http://mindy-cms.com",
-  "license": "BSD-3-Clause",
+  "license": "MIT",
   "autoload": {
     "psr-4": {
       "Modules\\": "Modules"
     }
   },
-  "config": {
-    "cache-files-ttl": 0
-  },
   "require": {
     "php": ">=7",
-    "mindy/orm": "*",
-    "mindy/cache": "*",
-    "mindy/base": "*",
+    "mindy/cache": "2.*",
+    "mindy/base": "2.0.2",
     "mindy/form": "*",
     "mindy/pagination": "*",
     "mindy/finder": "*",
-    "cebe/markdown": "*",
-    "mindy/router": "*",
+    "mindy/router": "2.*",
+    "mindy/http": "2.0.1",
     "mindy/mail": "*",
     "mindy/storage": "*",
     "mindy/logger": "*",
-    "mindy/template": "1.*",
-    "mindy/console": "*",
-    "mindy/controller": "*",
-    "mindy/security": "*",
-    "mindy/session": "*",
-    "mindy/event": "*",
-    "mindy/application": "*",
-    "mindy/table": "*"
+    "mindy/template": "*",
+    "mindy/console": "2.0.1",
+    "mindy/controller": "2.*",
+    "mindy/security": "2.*",
+    "mindy/state_persister": "2.*",
+    "mindy/event": "2.*",
+    "mindy/error_handler": "2.0.1",
+    "mindy/table": "*",
+    "mindy/tests": "2.*",
+    "mindy/middleware": "2.*",
+    "mindy/orm": "2.0.3"
   },
   "require-dev": {
-    "mindy/tests": "*",
-    "phpunit/phpunit": "3.7.32",
-    "phpunit/php-invoker": "1.1.3",
-    "phpunit/dbunit": "1.3.1",
-    "phpunit/phpunit-selenium": "1.3.3",
-    "phpunit/phpunit-story": "1.0.2",
-    "satooshi/php-coveralls": "dev-master"
+    "phpunit/phpunit": "*",
+    "phpunit/php-code-coverage": "*"
   },
   "authors": [
     {

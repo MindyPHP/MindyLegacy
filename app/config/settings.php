@@ -1,7 +1,12 @@
 <?php
 
-use Mindy\Template\Renderer;
 use Mindy\Helper\Console;
+use Mindy\Template\Renderer;
+use Mindy\Helper\Alias;
+
+use League\Flysystem\Adapter\Local;
+use League\Flysystem\Cached\CachedAdapter;
+use League\Flysystem\Cached\Storage\Memory as CacheStore;
 
 return [
     'basePath' => dirname(__FILE__) . '/../',
@@ -15,12 +20,6 @@ return [
         'charset' => 'utf-8',
     ],
     'components' => [
-        'middleware' => [
-            'class' => '\Mindy\Middleware\MiddlewareManager',
-            'middleware' => [
-            ]
-        ],
-
         'signal' => [
             'class' => '\Mindy\Event\EventManager',
             'events' => dirname(__FILE__) . DIRECTORY_SEPARATOR . 'events.php',
@@ -39,7 +38,7 @@ return [
             ]
         ],
         'permissions' => [
-            'class' => '\Modules\User\Components\Permissions'
+            'class' => '\Modules\User\Permissions\Permissions'
         ],
         'mail' => [
             'class' => '\Modules\Mail\Components\DbMailer',
@@ -61,19 +60,42 @@ return [
             ],
         ],
         'request' => [
-            'class' => '\Mindy\Http\Request',
-            'enableCsrfValidation' => false
+            'class' => '\Mindy\Http\Http',
+            'enableCsrfValidation' => false,
+            'middleware' => include('middleware.php'),
+            'session' => [
+                'class' => '\Modules\User\Session\UserSession',
+                'sessionName' => 'mindy',
+                'autoStart' => false,
+                'iniOptions' => [
+                    'gc_maxlifetime' => 60 * 60 * 24
+                ]
+            ],
         ],
         'auth' => [
-            'class' => '\Modules\User\Components\Auth',
+            'class' => '\Modules\Auth\Components\Auth',
             'allowAutoLogin' => true,
             'autoRenewCookie' => true,
+            'strategies' => [
+                'local' => ['class' => '\Modules\Auth\Strategy\LocalStrategy'],
+            ]
         ],
         'cache' => [
             'class' => '\Mindy\Cache\DummyCache'
         ],
         'storage' => [
-            'class' => '\Mindy\Storage\FileSystemStorage',
+            'class' => '\Mindy\Storage\Storage',
+            'adapters' => [
+                'default' => function () {
+                    $path = Alias::get('www.media');
+                    // Create the adapter
+                    $localAdapter = new Local($path);
+                    // Create the cache store
+                    $cacheStore = new CacheStore();
+                    // Decorate the adapter
+                    return new CachedAdapter($localAdapter, $cacheStore);
+                }
+            ]
         ],
         'template' => [
             'class' => '\Mindy\Template\Renderer',
